@@ -1,14 +1,23 @@
-var express = require('express');
-var port = process.env.PORT || 8080;
+const app = require('express')();
+const port =3000; 
 
-var app = express();
+   
 
-app.get('/', (req, res) =>
-    res.sendFile(__dirname + '/index.html')
-);
+   app.get('/api/test', async(req, res) => {
+ 
 
-app.use('/media', express.static('public'))
+      res.type('text');
+      res.send('secret');
+   });
+   app.get('/', (req,res)=>{
+      res.send('test');
+      })
 
-app.listen(port, () => {
-    console.log(`Application listening at http://localhost:${port}`)
-})
+   app.get('/tst', (req,res)=>{
+      res.send('tst');
+      })
+
+
+   app.listen(port, () => {
+      console.log('server running at',port);
+   })
