@@ -11,6 +11,8 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "@azure/identity": "^2.0.1",
+    "@azure/keyvault-secrets": "^4.3.0",
     "express": "^4.17.1"
   }
 }
